@@ -1,0 +1,595 @@
+/* reset de estilos*/
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--color-texto);
+}
+
+:root {
+    --color-texto: #3d2b1f;
+    --color-principal: #8B4513;
+    --ancho-max: 1140px;
+}
+
+.contenedor {
+    width: 100%;
+    max-width: var(--ancho-max);
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* estilos del header*/
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+
+.logo {
+    font-size: 1.3rem;
+    font-weight: bolder;
+    color: var(--color-principal);
+    text-decoration: none;
+}
+
+.menu ul {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu a {
+    color: var(--color-texto);
+    text-decoration: none;
+}
+
+.menu a:hover {
+    color: var(--color-principal);
+}
+
+.hamburguesa {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 0.5rem;
+    background: none;
+    border: 0;
+    cursor: pointer;
+}
+
+.hamburguesa span {
+    display: block;
+    width: 26px;
+    height: 3px;
+    background-color: var(--color-texto);
+    border-radius: 2px;
+    transition: transform .2s, opacity .2s;
+}
+
+.portada {
+    padding: 3rem 1rem;
+    text-align: center;
+    background-color: var(--color-principal);
+    color: #fff;
+}
+
+.portada h1 {
+    margin: 0 0 1rem;
+    font-size: 1.8rem;
+}
+
+.boton {
+    display: inline-block;
+    padding: 0.6rem 1.2rem;
+    background-color: var(--color-principal);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.boton:hover {
+    opacity: .9;
+}
+
+.portada .boton {
+    background-color: #f8f8f8;
+    color: var(--color-principal);
+}
+
+/* Footer */
+.footer {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 2rem 1rem;
+    background-color: #5C3A21;
+    color: #fff;
+    text-align: center;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.redes {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Tarjetas */
+.cards {
+    display: grid;
+    grid-template-columns: 1fr;          /* celular: 1 columna */
+    gap: 1rem;
+}
+
+.tarjeta {
+    width: 100%;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,.1);
+    overflow: hidden;
+    transition: transform .2s;
+}
+
+.tarjeta:hover {
+    transform: translateY(-4px);
+}
+
+.tarjeta img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.tarjeta h3,
+.tarjeta p {
+    padding: 0 1rem;
+}
+
+.tarjeta .boton {
+    margin: 1rem;
+}
+
+@media (min-width: 701px) {
+    .cards {
+        grid-template-columns: repeat(2, 1fr);   /* tablet: 2 columnas */
+    }
+}
+
+@media (min-width: 991px) {
+    .cards {
+        grid-template-columns: repeat(3, 1fr);   /* computadora: 3 columnas */
+    }
+}
+
+/* Accordion */
+.accordion .titulo {
+    width: 100%;
+    padding: 1rem;
+    text-align: left;
+    font-size: 1rem;
+    background: #f1f3f5;
+    border: 0;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+}
+
+.accordion .contenido {
+    display: none;
+    padding: 0 1rem;
+}
+
+.accordion .item.activo .contenido {
+    display: block;
+}
+
+/* base: celular */
+.menu {
+    display: none;
+}
+
+/* Formulario */
+.formulario {
+    max-width: 600px;
+    margin: 2rem auto;
+}
+
+.formulario label {
+    display: block;
+    margin-bottom: .5rem;
+}
+
+.formulario input,
+.formulario textarea {
+    width: 100%;
+    padding: .8rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.formulario button {
+    padding: .8rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--color-principal);
+    color: #fff;
+    cursor: pointer;
+}
+
+.formulario button:hover {
+    opacity: .9;
+}
+
+@media (min-width: 501px) {
+    .portada h1 {
+        font-size: 2.1rem;
+    }
+}
+
+@media (min-width: 701px) {
+    .portada {
+        padding: 4rem 2rem;
+    }
+
+    .footer {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        text-align: left;
+    }
+}
+
+/* Computadora */
+@media (min-width: 991px) {
+
+    .menu {
+        display: block;
+    }
+
+    .hamburguesa {
+        display: none;
+    }
+
+    .portada h1 {
+        font-size: 2.6rem;
+    }
+}
+
+/* Galería */
+.galeria {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.galeria h2,
+.galeria p {
+    width: 100%;
+    text-align: center;
+}
+
+.galeria img {
+    width: 180px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform .3s ease, box-shadow .3s ease;
+    cursor: pointer;
+}
+
+.galeria img:hover {
+    transform: scale(1.05);
+    border: 3px solid #8B4513;
+    box-shadow: 0 10px 20px rgba(0,0,0,.4);
+}
+
+main {
+    padding: 2rem 1rem;
+}
+
+h1,
+h2 {
+    text-align: center;
+}
+
+
+
+/* Menú en celular: se abre al tocar la hamburguesa */
+.menu.abierto {
+    display: block;
+}
+
+@media (min-width: 991px) {
+    .header {
+        padding-right: 3rem;       /* más alto = más hacia el centro, más bajo = más pegado al borde derecho */
+    }
+
+    .menu {
+        width: auto;               /* evita que el menú se estire por toda la barra */
+        margin-left: auto;         /* lo empuja a la derecha */
+    }
+
+    .menu ul {
+        display: flex;
+        justify-content: flex-end; /* alinea las palabras a la derecha */
+        gap: 1rem;                 /* separación entre palabras: más chico = más juntas */
+        margin: 0;
+        padding: 0;
+    }
+}
+/* Página de productos (servicios.html) */
+/* ===== Página de productos: orden y color ===== */
+main:has(.servicios) {
+    background-color: #fff8ee;          /* fondo crema suave */
+}
+
+.servicios {
+    display: grid !important;
+    grid-template-columns: 1fr;         /* celular: 1 columna */
+    gap: 1.5rem;
+    max-width: var(--ancho-max);
+    margin: 2rem auto 0 !important;
+    padding: 0 1rem;
+}
+
+.servicios .servicio {
+    width: 100% !important;             /* todas del mismo ancho */
+    margin: 0 !important;               /* quita lo que las desordenaba */
+    float: none !important;
+    padding: 1.5rem;
+    background: #fff;
+    border-top: 5px solid var(--color-principal);   /* franja café arriba */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(139, 69, 19, .15);
+    text-align: center;
+    transition: transform .2s, box-shadow .2s;
+}
+
+.servicios .servicio:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 18px rgba(139, 69, 19, .3);
+}
+
+.servicios .servicio h2 {
+    margin: 0 0 .8rem;
+    font-size: 1.25rem;
+    color: var(--color-principal);
+}
+
+.servicios .servicio p {
+    margin: 0;
+    padding: 0 !important;
+    text-indent: 0 !important;          /* quita la sangría de la primera línea */
+    line-height: 1.5;
+    color: var(--color-texto);
+}
+
+/* Iconos de cada producto */
+.servicios .servicio:nth-child(1) h2::before { content: "🍞 "; }
+.servicios .servicio:nth-child(2) h2::before { content: "🌾 "; }
+.servicios .servicio:nth-child(3) h2::before { content: "🍰 "; }
+.servicios .servicio:nth-child(4) h2::before { content: "🍪 "; }
+.servicios .servicio:nth-child(5) h2::before { content: "🎂 "; }
+.servicios .servicio:nth-child(6) h2::before { content: "☕ "; }
+
+@media (min-width: 701px) {
+    .servicios { grid-template-columns: repeat(2, 1fr); }   /* tablet: 2 columnas */
+}
+
+@media (min-width: 991px) {
+    .servicios { grid-template-columns: repeat(3, 1fr); }   /* computadora: 3 columnas */
+}
+/* Logo  */ 
+.logo img {
+    height: 150px;      /* tamaño del emblema: sube o baja este número */
+    width: auto;       /* mantiene la proporción */
+    display: block;
+}
+
+@media (max-width: 700px) {
+    .logo img {
+        height: 50px;  /* más pequeño en celular */
+    }
+}
+
+/* ===== Página de contacto: orden y color ===== */
+main:has(.formulario) {
+    background-color: #fff8ee;              /* fondo crema suave */
+    padding-bottom: 3rem;
+}
+
+/* Párrafo de arriba: un solo bloque centrado */
+main:has(.formulario) > p {
+    display: block !important;
+    column-count: 1 !important;
+    width: auto !important;
+    max-width: 600px;
+    margin: 0 auto 1.5rem !important;
+    padding: 0 1rem;
+    text-align: center;
+    line-height: 1.5;
+}
+
+/* Tarjeta del formulario */
+.formulario {
+    display: flex;
+    flex-direction: column;
+    gap: .4rem;
+    max-width: 520px;
+    margin: 1.5rem auto 0 !important;
+    padding: 2rem;
+    background: #fff;
+    border-top: 5px solid var(--color-principal);   /* franja café arriba */
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(139, 69, 19, .18);
+}
+
+/* Quita los saltos <br> que separaban de más */
+.formulario br {
+    display: none;
+}
+
+.formulario label {
+    margin: .8rem 0 .2rem !important;
+    font-weight: bold;
+    color: var(--color-principal);
+}
+
+.formulario input,
+.formulario textarea {
+    width: 100%;
+    padding: .8rem;
+    border: 1px solid #d9c3a8;
+    border-radius: 6px;
+    background: #fffdf9;
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+.formulario input:focus,
+.formulario textarea:focus {
+    outline: none;
+    border-color: var(--color-principal);
+    box-shadow: 0 0 0 3px rgba(139, 69, 19, .2);
+}
+
+.formulario textarea {
+    resize: vertical;
+}
+
+/* Botón alineado y a todo el ancho */
+.formulario button {
+    width: 100%;
+    margin: 1.2rem 0 0 !important;
+    padding: .9rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    background-color: var(--color-principal);
+    color: #fff;
+    cursor: pointer;
+}
+
+.formulario button:hover {
+    background-color: #5C3A21;
+    opacity: 1;
+}
+
+
+/* ===== Página Nosotros: orden y color ===== */
+main.nosotros {
+    background-color: #fff8ee;              /* fondo crema suave */
+    padding: 2rem 1rem 3rem;
+}
+
+/* Título con línea decorativa */
+main.nosotros h1 {
+    margin-bottom: 2rem;
+    color: var(--color-principal);
+}
+
+main.nosotros h1::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 4px;
+    margin: .6rem auto 0;
+    background: var(--color-principal);
+    border-radius: 2px;
+}
+
+/* Cada párrafo como una tarjeta alineada */
+main.nosotros p {
+
+
+     white-space: normal !important;   /* ignora los saltos y espacios del HTML */
+    word-spacing: normal !important;
+    letter-spacing: normal !important;
+    text-align: left !important;
+    text-indent: 0 !important;
+    display: block !important;
+    column-count: 1 !important;
+    width: auto !important;
+    max-width: 700px;
+    margin: 0 auto 1.2rem !important;
+    padding: 1.2rem 1.5rem !important;
+    text-indent: 0 !important;
+    text-align: left;
+    line-height: 1.7;
+    background: #fff;
+    border-left: 5px solid var(--color-principal);   /* franja café al lado */
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(139, 69, 19, .15);
+}
+
+/* ===== Pie de página ordenado ===== */
+.footer {
+    display: grid;
+    grid-template-columns: 1fr;       /* celular: todo en una columna */
+    gap: 1.5rem;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    background-color: #5C3A21;
+    color: #fff;
+}
+
+.footer p,
+.footer li {
+    margin: 0 0 .4rem;
+    padding: 0;
+    text-indent: 0;                   /* quita la sangría de la primera línea */
+    white-space: normal;              /* ignora los saltos del HTML */
+    word-spacing: normal;
+    line-height: 1.5;
+}
+
+.footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+.footer .redes {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+@media (min-width: 701px) {
+    .footer {
+        grid-template-columns: 1fr auto 1fr;   /* info | redes | copyright */
+        align-items: center;
+        max-width: none;
+    }
+
+    .footer-info {
+        text-align: left;
+    }
+
+    .footer .copy {
+        text-align: right;
+        margin: 0;
+    }
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panadería Artesanal - Contacto</title>
+    <link rel="stylesheet" href="./css/estilos.css">
+</head>
+<body>
+ <header class="header">
+    <a href="index.html" class="logo">
+        <img src="img/emblema.png" alt="Panadería Sebas Brenes">
+    </a>
+    <button class="hamburguesa" id="btnMenu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+    <nav class="menu">
+        <ul id="menu">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="nosotros.html">Nosotros</a></li>
+            <li><a href="servicios.html">Productos</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+    </nav>
+</header>
+<main>
+    <h1>Contáctanos</h1>
+    <p>
+        ¿Deseas realizar un pedido o consultar sobre nuestros productos?
+        Escríbenos y con gusto te atenderemos.
+    </p>
+    <form action="enviar.php" method="post" class="formulario">
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" name="nombre" required>
+        <br><br>
+        <label for="correo">Correo</label>
+        <input type="email" id="correo" name="correo" required>
+        <br><br>
+        <label for="mensaje">Mensaje</label>
+        <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+        <br><br>
+        <button type="submit">Enviar Consulta</button>
+    </form>
+</main>
+<br><br><br>
+<footer class="footer">
+    <div class="footer-info">
+        <p><strong>Panadería Artesanal</strong></p>
+        <p>Teléfono: <a href="tel:+50672540172">+506 7254-0172</a></p>
+        <p>Correo: info@panaderiaartesanal.com</p>
+    </div>
+    <ul class="redes">
+        <li><a href="https://www.facebook.com/" target="_blank" rel="noopener">Facebook</a></li>
+        <li><a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a></li>
+    </ul>
+    <p class="copy">&copy; 2026 Panadería Artesanal</p>
+</footer>
+<script src="./js/main.js"></script>
+</body>
+</html>
